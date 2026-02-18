@@ -1,0 +1,12 @@
+v5.2
+
+Added a *TINY* bit of safety because I got a little bit scared when bugtestign. this command:
+NUKE dir C:\Program Files\TESTFOLDERFORNUK3RDELETE\
+
+It worked luckily.
+
+
+I added stuff to make sure paths with spaces work correctly,
+
+I also made a thing that tries to give itself permission over a file if it's initially denied permission.
+

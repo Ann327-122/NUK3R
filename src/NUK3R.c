@@ -1,7 +1,7 @@
 // HELLO! ANYONE READING THIS CODE, PLEASE, GO AHEAD AND IMPROVE IT (AND MY GRAMMAR) BECAUSE I AM REALLY, NOT THE BEST AT C. I JUST WANTED TO GO ON A POWER TRIP TO MAKE A PIECE OF SOFTWARE THAT COULD UNINSTALL OR JUST 'NUKE' ANYTHING I WANTED. I MIGHT IMPROVE IT IN THE FUTURE, I MIGHT NOT, IDK. -\_(:/)_/-
 
 /*
-* VERSION: 3... IDK I FORGOT TO KEEP TRACK, IT'S LIKE VERSION 3-4.5 OR SOMETHING, IDK.
+* VERSION: 5.2 (Updated with Permission Seizing and Better Path Handling)
 *
 * NOTES:
 * - Codes likely buggy, or non-functional in some places,
@@ -22,6 +22,8 @@
 #include <windows.h>    
 #include <tlhelp32.h>   
 #include <errno.h>      
+#include <conio.h>
+#include <ctype.h>
 
 // I'm so bad at C why does none of the text look Bold in the app???
 // --- ANSI COLOR DEFINITIONS! ---
@@ -48,6 +50,8 @@ void list_installed_apps();
 void list_running_processes();
 void list_directory_contents(const char* path);
 size_t _strlcpy(char *dst, const char *src, size_t size);
+void strip_quotes(char *str);
+void trim_whitespace(char *str);
 
 // --- Main NUK3R Program ---
 int main() {
@@ -89,8 +93,14 @@ int main() {
         token = strtok(NULL, " ");
         if (token != NULL) {
             _strlcpy(sub_command_str, token, sizeof(sub_command_str));
+            // Grab the rest of the line to allow for spaces in paths
             token = strtok(NULL, ""); 
-            if (token != NULL) _strlcpy(target_arg_str, token, sizeof(target_arg_str));
+            if (token != NULL) {
+                _strlcpy(target_arg_str, token, sizeof(target_arg_str));
+                // Clean up the input path
+                trim_whitespace(target_arg_str);
+                strip_quotes(target_arg_str);
+            }
             else target_arg_str[0] = '\0';
         } else {
             sub_command_str[0] = '\0';
@@ -196,16 +206,78 @@ void kill_process_by_name(const char* process_name) {
     CloseHandle(hSnapShot);
 }
 
+// DIRECTORY AND FILE DELETION!!1!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!
 int delete_file_or_directory(const char* path) {
+
+    // --- THE AGGRESSIVE EMERGENCY BRAKE BECAUSE I HAVE SOME LEVEL OF SANITY APPARENTLY. ---
+    // Detect if user is trying to nuke the root of the drive.
+    if (_stricmp(path, "C:\\") == 0 || _stricmp(path, "C:/") == 0 || strlen(path) < 4) {
+        printf(R_B "\n[!!!] ROOT LEVEL OBLITERATION DETECTED [!!!]\n" RESET);
+        printf(YELLOW "You are about to nuke the base of your drive. This will break everything.\n");
+        printf(ORANGE "Look, I know I said No warnings but I apparently have some sanity, \n");
+        printf(ORANGE "and I wanted to test what happens when you mess up the spaces in the path without breaking my own OS so a little bit selfish, I know.)");
+        printf(R_B "I will proceed in 10 seconds unless you stop me.\n" RESET);
+
+        for (int i = 10; i > 0; i--) {
+            printf("\r" R_B ">> INITIATING DRIVE COLLAPSE IN: %d (Press 'S' to ABORT or CTRL + C to kill me.) " RESET, i);
+            
+            // Check for keypress 10 times per second for a total of 1 second
+            for (int j = 0; j < 10; j++) {
+                if (_kbhit()) {
+                    char ch = _getch();
+                    if (ch == 's' || ch == 'S') {
+                        printf("\n" GREEN ">> OBLITERATION ABORTED. Coward." RESET "\n\n");
+                        return 0;
+                    }
+                }
+                Sleep(100); // Wait 100ms
+            }
+        }
+        printf("\n" R_B ">> NO ABORT RECEIVED. GOOD LUCK.\n" RESET);
+    }
+
     DWORD attr = GetFileAttributesA(path);
-    if (attr == INVALID_FILE_ATTRIBUTES) return 1;
+    if (attr == INVALID_FILE_ATTRIBUTES) {
+        printf(R_B "  [!] Error: Path not found or invalid: %s\n" RESET, path);
+        return 0;
+    }
+    
     if (attr & FILE_ATTRIBUTE_DIRECTORY) return delete_directory_recursive(path);
 
     SetFileAttributesA(path, FILE_ATTRIBUTE_NORMAL);
+    
+    // First attempt at deletion
     if (DeleteFileA(path)) {
         printf(GREEN "  [X] Nuked File: %s\n" RESET, path);
         return 1;
-    } else {
+    } 
+    else {
+        // PERMISSIONS THING: If access denied, force take ownership and grant permissions
+        DWORD error = GetLastError();
+        if (error == ERROR_ACCESS_DENIED) {
+            printf(YELLOW "  [!] Access Denied on %s. Attempting to seize permissions...\n" RESET, path);
+            
+            char cmd_takeown[MAX_PATH * 2 + 32];
+            char cmd_icacls[MAX_PATH * 2 + 64];
+            
+            // Command to take ownership
+            sprintf_s(cmd_takeown, sizeof(cmd_takeown), "takeown /F \"%s\" /A >nul 2>&1", path);
+            system(cmd_takeown);
+            
+            // Command to grant full control to Administrators
+            sprintf_s(cmd_icacls, sizeof(cmd_icacls), "icacls \"%s\" /grant Administrators:F /C /Q >nul 2>&1", path);
+            system(cmd_icacls);
+
+            // Reset attributes again
+            SetFileAttributesA(path, FILE_ATTRIBUTE_NORMAL);
+
+            // Retry deletion
+            if (DeleteFileA(path)) {
+                printf(GREEN "  [X] Nuked File (Forced): %s\n" RESET, path);
+                return 1;
+            }
+        }
+
         if (MoveFileExA(path, NULL, MOVEFILE_DELAY_UNTIL_REBOOT)) {
             printf(YELLOW "  [!] Locked: %s (Scheduled for Reboot Nuke)\n" RESET, path);
             return 1;
@@ -229,7 +301,27 @@ int delete_directory_recursive(const char* path) {
         } while (FindNextFileA(hFind, &fd));
         FindClose(hFind);
     }
-    return RemoveDirectoryA(path);
+    
+    // Try standard remove
+    if (RemoveDirectoryA(path)) {
+        return 1;
+    } else {
+        // Force Permission logic for directories
+        DWORD error = GetLastError();
+        if (error == ERROR_ACCESS_DENIED) {
+            char cmd_takeown[MAX_PATH * 2 + 32];
+            char cmd_icacls[MAX_PATH * 2 + 64];
+            sprintf_s(cmd_takeown, sizeof(cmd_takeown), "takeown /F \"%s\" /R /A >nul 2>&1", path);
+            system(cmd_takeown);
+            sprintf_s(cmd_icacls, sizeof(cmd_icacls), "icacls \"%s\" /grant Administrators:F /T /C /Q >nul 2>&1", path);
+            system(cmd_icacls);
+            
+            if (RemoveDirectoryA(path)) return 1;
+        }
+        // Fallback to reboot delete
+        MoveFileExA(path, NULL, MOVEFILE_DELAY_UNTIL_REBOOT);
+        return 0;
+    }
 }
 
 int is_edge_alias(const char* name) {
@@ -245,6 +337,26 @@ size_t _strlcpy(char *dst, const char *src, size_t size) {
         dst[cp] = '\0';
     }
     return len;
+}
+
+void strip_quotes(char *str) {
+    size_t len = strlen(str);
+    if (len > 1 && str[0] == '"' && str[len - 1] == '"') {
+        memmove(str, str + 1, len - 2);
+        str[len - 2] = '\0';
+    }
+}
+
+void trim_whitespace(char *str) {
+    if (!str) return;
+    // Trim trailing
+    char *end = str + strlen(str) - 1;
+    while (end > str && isspace((unsigned char)*end)) end--;
+    end[1] = '\0';
+    // Trim leading
+    char *start = str;
+    while (*start && isspace((unsigned char)*start)) start++;
+    memmove(str, start, strlen(start) + 1);
 }
 
 void list_installed_apps() { system("winget list"); }
