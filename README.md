@@ -38,4 +38,5 @@ NUK3R is a open-source Command Line Interface (CLI) tool designed for aggressive
 **Disclaimer:**
 This software is provided "as is" with absolutely no warranty. It is a powerful tool capable of irreversable changes to the operating system. The developer (Ann) takes zero responsibility for system instability, data loss, or accidental self-destruction of you're windows install.
 
+
 *Please run as Administrator for full functionality.*
