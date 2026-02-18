@@ -1,0 +1,37 @@
+#include <winver.h>
+// ICON
+MAINICON ICON "nuk3r.ico"
+
+// --- Version Information Resource ---
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,2,0,0             // ??? maybe Idfk.
+ PRODUCTVERSION 1,4,2,0		 // yeah, product v. 1.4.2 sure, why not. Ig this means it's the first release.. ugh, normally I just use launch4j but I can't for this C project.
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904B0" 
+        BEGIN
+            VALUE "CompanyName", "Ann"
+            VALUE "FileDescription", "NUK3R - The Ultimate Local Obliterator"
+            VALUE "FileVersion", "4.2.0.0"
+            VALUE "InternalName", "NUK3R.exe"
+            VALUE "LegalCopyright", "© 2026 Ann. All rights reserved."
+            VALUE "OriginalFilename", "NUK3R.exe"
+            VALUE "ProductName", "NUK3R"
+            VALUE "ProductVersion", "1.4.2.0"
+
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+	VALUE "Translation", 0x0809, 1200 
+    END
+END
