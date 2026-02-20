@@ -17,8 +17,8 @@
 *
 * NOTES:
 * - Codes likely buggy, or non-functional in some places,
-* - This is uncommented as shit lmao.
-* - Absolutely No fucking safety protocols or standards anywhere because 1. Not treating the user like an idiot. 2. 4am power-trip.
+* - This is uncommented as crap lmao.
+* - Absolutely No fracking safety protocols or standards anywhere because 1. Not treating the user like an idiot. 2. 4am power-trip.
 *
 * ENJOY! :3
 *
@@ -83,7 +83,7 @@ int main() {
     printf(ORANGE "HEY HOW ARE YOU? FEEL FREE TO OBLITERATE ANYTHING YOU WANT! I'M ADDING A WAY TO UNINSTALL EDGE TOO! NO WARNINGS!!!!\n" RESET);
     printf(YELLOW "Oh, and btw for some things " RESET ITALIC YELLOW "*especially with deleting edge* " RESET YELLOW "You " RESET YELLOW ITALIC "might" RESET YELLOW " wanna run this with " RESET R_B BOLD "Administrator Privileges." RESET "\n");
     printf(GREEN "Type HELP for commands\n\n" RESET);
-    // Line break in code. Duh, Idk why I left this comment, I should really use my time to comment the actual code rather than blank lines, since this shit is so uncommented, I'll come back to it in a month or a year and not understand anything lmao.
+    // Line break in code. Duh, Idk why I left this comment, I should really use my time to comment the actual code rather than blank lines, since this crap is so uncommented, I'll come back to it in a month or a year and not understand anything lmao.
     printf(R_B BOLD "THE ONLY WARNING YOU WILL GET: \n");
     printf(R_B BOLD "NUK3R operates instantly upon command submission.\n");
     printf(R_B BOLD "There are no \"Are you sure?\" prompts. Any input error may result in immediate, unrecoverable data loss. \n");
