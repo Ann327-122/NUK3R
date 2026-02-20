@@ -43,3 +43,5 @@ This software is provided "as is" with absolutely no warranty. It is a powerful 
 
 *Please run as Administrator for full functionality.*
 
+
+[View Credits Here!](CREDITS.md)
