@@ -49,5 +49,6 @@ This software is provided "as is" with absolutely no warranty. It is a powerful 
 
 ## Contact
 If you have questions, feedback, or need to report a bug, you can reach me at:
-**ann.dev.projects (at) gmail.com**
+**ann.dev.projects [at] gmail.com**
+
 
