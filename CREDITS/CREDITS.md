@@ -44,4 +44,14 @@ Ann - creator.
 :)
 
 
+
 **EXT-RES' RULES APPLY TO MAIN DISTRO ASWELL, HENCE WHY MY NAME IS IN BOTH FOR THE MAIN DISTRO.
+
+!---!
+CLEARER RULES DOWN HERE:
+!---!
+
+### **RULES FOR CONTRIBUTORS:**
+*   **The Main Repository Credits** should remain intact. Do not remove names from this section.
+*   **The Distribution Credits** are specific to *your* version. If you fork this project, feel free to remove names from this section that did not work on your specific version, and add your own!
+*   **Legal Note:** All names listed here are covered under the protections and non-liability clauses found in `LICENSE.txt` and `LIABILITY_STATEMENT.md`.
