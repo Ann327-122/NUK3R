@@ -80,7 +80,7 @@ but you can do whatever you like as long as its under my LICENSE and Rules**
 
 
 
-# 8. MAINTAINER'S DISCRETION & FINAL SAY***
+# 8. MAINTAINER'S DISCRETION & FINAL SAY
 The Original Developer (Ann) reserves the absolute right to reject, close, or modify any Pull Request or contribution for any reason, including but not limited to:
 *   Unnecessary code bloat or lack of optimization.
 *   Incompatibility with the project’s vision or style.
@@ -106,3 +106,4 @@ p.s.
 
 
 *** You MUST include disclaimers and credits for the creator (Me, (Ann)) as stated under the LICENSE.txt File. AND a Disclaimer for yourself, Any damage caused by your version is on you unless you add specific legal disclaimers under your name, my name, and any other contributors. I am not responsible for damage caused by your changes or testing.
+
