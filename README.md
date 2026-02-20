@@ -26,6 +26,8 @@ I've included my terrible source code, (Nuk3r.c) and the commands for compiling,
 
 # NUK3R - Advanced System Administration Utility
 
+[View Changelog](CHANGELOG.md)
+
 NUK3R is a open-source Command Line Interface (CLI) tool designed for aggressive system maintenance and bloatware managment. Written purely in C, it offers administators a lightweight solution for rapid task termination and file system cleanup without the hinderance of user-safety confirmations or latency.
 
 **Core Capabilties:**
@@ -40,3 +42,4 @@ This software is provided "as is" with absolutely no warranty. It is a powerful 
 
 
 *Please run as Administrator for full functionality.*
+
