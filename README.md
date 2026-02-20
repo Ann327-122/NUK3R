@@ -38,10 +38,11 @@ NUK3R is a open-source Command Line Interface (CLI) tool designed for aggressive
 *   **Edge Mitigation:** Contains specific logic routenes dedicated to the detection and removal of Microsoft Edge components and services.
 
 **Disclaimer:**
-This software is provided "as is" with absolutely no warranty. It is a powerful tool capable of irreversable changes to the operating system. The developer (Ann) takes zero responsibility for system instability, data loss, or accidental self-destruction of you're windows install.
+This software is provided "as is" with absolutely no warranty. It is a powerful tool capable of irreversable changes to the operating system. The developer (Ann) takes zero responsibility for system instability, data loss, or accidental self-destruction of your windows install.
 
 
 *Please run as Administrator for full functionality.*
 
 
 [View Credits Here!](CREDITS.md)
+
