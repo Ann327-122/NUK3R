@@ -8,16 +8,23 @@ I've laid out some rough guidelines for if you choose to release your update:
 
 BY CONTRIBUTING TO THIS PROJECT, YOU, THE CONTRIBUTOR, ACKNOWLEDGE AND AGREE TO THE FOLLOWING:
 
-1.  **YOU ARE 100% RESPONSIBLE FOR YOUR OWN CODE AND TESTING.** ANY DAMAGE CAUSED BY YOUR CONTRIBUTIONS, WHETHER DURING TESTING OR IN ANY OTHER SCENARIO, IS SOLELY YOUR RESPONSIBILITY. THIS INCLUDES, BUT IS NOT LIMITED TO, SYSTEM INSTABILITY, DATA LOSS, OR ANY OTHER CATASTROPHIC FAILURE.
+1.  **DEFAULT LIABILITY FOR CONTRIBUTIONS.**
+    By default, and unless you explicitly state otherwise as detailed below, you, the Contributor, assume full and sole liability for any and all damages, losses, or negative consequences arising from your contributions. This includes, but is not limited to, system instability, data loss, security vulnerabilities, or any other catastrophic failure, whether occurring during testing, integration, or in any operational scenario.
 
-2.  **THE ORIGINAL DEVELOPER (ANN) IS NOT RESPONSIBLE FOR YOUR CHANGES.** YOU AGREE TO INDEMNIFY AND HOLD HARMLESS THE ORIGINAL COPYRIGHT HOLDER OF THIS PROJECT FROM ANY AND ALL CLAIMS, DAMAGES, OR LIABILITIES ARISING FROM YOUR CONTRIBUTIONS.
+    **To Specify Non-Liability:**
+    Should you wish to limit or disclaim liability for a specific contribution, you **MUST** clearly and prominently specify the scope and nature of such non-liability **within the documentation or metadata directly accompanying that contribution.** Examples include:
+    *   A dedicated section in your Pull Request (PR) description explicitly stating the non-liability.
+    *   A new file named `LIABILITY_STATEMENT.md` placed within the root directory of your specific contribution, detailing the limitations.
+    *   A clear header or comment block within relevant code files that directly asserts non-liability.
+    *   **Failure to explicitly specify non-liability in a clear and prominent manner means full liability, as outlined above, is retained by you.**
 
-3.  **ALL CONTRIBUTIONS ARE PROVIDED "AS IS".** JUST LIKE THE REST OF THIS PROJECT, YOUR CONTRIBUTIONS WILL BE LICENSED UNDER THE INCLUDED MIT LICENSE AND CARRY ABSOLUTELY NO WARRANTY.
+2.  **INDEMNIFICATION OF ORIGINAL DEVELOPER.**
+    You further agree to indemnify and hold harmless the original copyright holder of this project (Ann), along with any project maintainers, developers, or entities associated with its distribution, from any and all claims, damages, losses, liabilities, costs, and expenses (including legal fees) arising from your contributions. This indemnification applies regardless of whether you have attempted to specify non-liability for your contributions, and covers any issues that may arise from such non-liability assertions themselves.
+
+3.  **CONTRIBUTIONS PROVIDED "AS IS" WITH NO WARRANTY.**
+    Just like the rest of this project, your contributions will be licensed under the included MIT License. All contributions are provided "AS IS," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
 
 YOUR DECISION TO COMMIT CODE TO THIS REPOSITORY CONSTITUTES YOUR FULL AND UNCONDITIONAL ACCEPTANCE OF THESE TERMS. IF YOU DO NOT AGREE, DO NOT CONTRIBUTE.
-
-
-
 
 
 ===
