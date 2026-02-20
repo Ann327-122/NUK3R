@@ -8,23 +8,22 @@ I've laid out some rough guidelines for if you choose to release your update:
 
 BY CONTRIBUTING TO THIS PROJECT, YOU, THE CONTRIBUTOR, ACKNOWLEDGE AND AGREE TO THE FOLLOWING:
 
-1.  **DEFAULT LIABILITY FOR CONTRIBUTIONS.**
-    By default, and unless you explicitly state otherwise as detailed below, you, the Contributor, assume full and sole liability for any and all damages, losses, or negative consequences arising from your contributions. This includes, but is not limited to, system instability, data loss, security vulnerabilities, or any other catastrophic failure, whether occurring during testing, integration, or in any operational scenario.
+1.  **SHARED PROTECTION FROM THE END-USER.**
+    This project is designed to be destructive. By contributing, you agree that your code is provided to the public with a total disclaimer of liability. You, as a contributor, and the Original Developer (Ann), shall not be held liable by any user for any damages, data loss, or system failures. We stand together in asserting that the User assumes 100% of the risk.
 
-    **To Specify Non-Liability:**
-    Should you wish to limit or disclaim liability for a specific contribution, you **MUST** clearly and prominently specify the scope and nature of such non-liability **within the documentation or metadata directly accompanying that contribution.** Examples include:
-    *   A dedicated section in your Pull Request (PR) description explicitly stating the non-liability.
-    *   A new file named `LIABILITY_STATEMENT.md` placed within the root directory of your specific contribution, detailing the limitations.
-    *   A clear header or comment block within relevant code files that directly asserts non-liability.
-    *   **Failure to explicitly specify non-liability in a clear and prominent manner means full liability, as outlined above, is retained by you.**
+2.  **MANDATORY NON-LIABILITY ASSERTION.**
+    To protect yourself from potential claims by end-users, you should clearly disclaim liability for your contributions. This ensures that the "Legal Fortress" of NUK3R remains consistent. 
+    
+    **How to protect yourself:**
+    We strongly recommend you include a statement of non-liability in your Pull Request, code headers, or a `LIABILITY_STATEMENT.md` file in your distribution. This is to ensure the End-User knows that **neither you nor Ann** are responsible for what the software does.
 
-2.  **INDEMNIFICATION OF ORIGINAL DEVELOPER.**
-    You further agree to indemnify and hold harmless the original copyright holder of this project (Ann), along with any project maintainers, developers, or entities associated with its distribution, from any and all claims, damages, losses, liabilities, costs, and expenses (including legal fees) arising from your contributions. This indemnification applies regardless of whether you have attempted to specify non-liability for your contributions, and covers any issues that may arise from such non-liability assertions themselves.
+3.  **MIT LICENSE AGREEMENT (NO WARRANTY).**
+    By contributing, you agree to license your work under the project's existing MIT License. As stated in the LICENSE.txt: **"THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND."** This is our primary legal shield. There is no warranty of merchantability or fitness for a particular purpose.
 
-3.  **CONTRIBUTIONS PROVIDED "AS IS" WITH NO WARRANTY.**
-    Just like the rest of this project, your contributions will be licensed under the included MIT License. All contributions are provided "AS IS," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
+4.  **NO INDEMNIFICATION REQUIRED.**
+    Contributors are **NOT** required to indemnify the original developer. You are not responsible for the legal costs of others. However, you are responsible for your own actions and your own testing environment. If you damage your own hardware during development, that is your own responsibility.
 
-YOUR DECISION TO COMMIT CODE TO THIS REPOSITORY CONSTITUTES YOUR FULL AND UNCONDITIONAL ACCEPTANCE OF THESE TERMS. IF YOU DO NOT AGREE, DO NOT CONTRIBUTE.
+YOUR DECISION TO COMMIT CODE TO THIS REPOSITORY CONSTITUTES YOUR ACCEPTANCE OF THESE TERMS. IF YOU DO NOT AGREE, DO NOT CONTRIBUTE.
 
 
 ===
