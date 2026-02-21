@@ -21,7 +21,7 @@ Provided 'Inno Setup' installer script for anyone who needs it. (Find in the `/B
 Updated installers README to the correct version.
 
 
-v2.5.5 (Security and second release!!!)
+v2.7.5 (Security and second release!!!)
 
 Created new release,
 Added protection against malicious scripts whilst allowing for ***authorized*** automation scripts.
@@ -29,4 +29,5 @@ Added protection against malicious scripts whilst allowing for ***authorized*** 
 Added a new `NUKE crawl <file.extension>` command Which performs an interive crawl around your entire computer, and all of your drives to find: Matching files, fuzzy-matched files, of the specified type. And returns their paths.
 
 Updated documentation files and things. (Duh,)
+
 
