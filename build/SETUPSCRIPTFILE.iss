@@ -31,14 +31,14 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\DELL\Downloads\NUK3R\Nuk3r\LICENSE.txt
-InfoBeforeFile=C:\Users\DELL\Downloads\NUK3R\Readme.txt
+InfoBeforeFile=C:\Users\DELL\Downloads\NUK3R\Nuk3r\README.md
 InfoAfterFile=C:\Users\DELL\Downloads\NUK3R\Nuk3r\CHANGELOG.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\Users\DELL\Downloads\NUK3R\Nuk3r
 OutputBaseFilename=NUK3R setup
-SetupIconFile=C:\Users\DELL\Downloads\NUK3R\Nuk3r\icon\NUK3R.ico
+SetupIconFile=C:\Users\DELL\Downloads\NUK3R\Nuk3r\assets\icon\NUK3R.ico
 SolidCompression=yes
 WizardStyle=classic dynamic
 
