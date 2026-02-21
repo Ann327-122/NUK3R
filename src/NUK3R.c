@@ -2,7 +2,7 @@
 
 /*
  * NUK3R - The Ultimate Local Obliterator
- * VERSION: 5.5 (Robust Iterative Crawl, Script detection, general robustness and improvements. Also I made the disclaimer and warning much MUCH more prominent lol.)
+ * VERSION: 7.5 (Robust Iterative Crawl, Script detection, general robustness and improvements. Also I made the disclaimer and warning much MUCH more prominent lol.)
  * Copyright (c) 2026 Ann
 * --=--
 *
@@ -751,4 +751,5 @@ void uninstall_app_winget(const char* n) {
 void run_powershell_command(const char* c) {
     char b[1024]; sprintf_s(b, 1024, "powershell.exe -NoProfile -Command \"%s\"", c);
     system(b);
+
 }
